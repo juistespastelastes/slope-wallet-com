@@ -1,0 +1,157 @@
+.hidden {
+  overflow: hidden;
+}
+
+.header {
+  width: 100%;
+  background: #161621;
+  padding: 15px 0;
+}
+
+.header__inner {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo p {
+  color: #fff;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+}
+
+.header__button {
+  background: #ff9c09;
+  border: none;
+  color: #fff;
+  font: 16px 'Tahoma', sans-serif;
+  outline: none;
+  height: 45px;
+  border-radius: 3px;
+  padding: 0 30px;
+  cursor: pointer;
+  transition: .3s;
+  margin-left: 15px;
+}
+
+.header__button:hover {
+  background: #4545b5;
+  transition: .3s;
+}
+
+/* Обновленные стили для модальных окон */
+.modal,
+.Phantom,
+.MathWallet,
+.Solong,
+.Ledger,
+.Clover,
+.Solflare,
+.Sollet,
+.Slope {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1200;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 15px;
+}
+
+/* Активное состояние для всех модальных окон */
+.modal_active,
+.Phantom.active,
+.MathWallet.active,
+.Solong.active,
+.Ledger.active,
+.Clover.active,
+.Solflare.active,
+.Sollet.active,
+.Slope.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.import-account__secret-phrase {
+  resize: none !important;
+  background: #272238;
+  border-radius: 6px;
+  transition: .3s;
+  padding: 12px 10px;
+  width: 100%;
+  min-height: 100px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.import-account__secret-phrase:focus {
+  background: #221e31 !important;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.modal__close-button {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+  transition: .3s;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__close-button:hover {
+  transform: rotate(180deg);
+  transition: .3s;
+}
+
+.modal__title {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin: 0 0 15px;
+  color: #fff;
+}
+
+.modal__description {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.wallet-adapter-modal-wrapper {
+  background: #1a1a2e;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 460px;
+  width: 100%;
+  position: relative;
+  color: #fff;
+}
+
+.wallet-adapter-modal-title {
+  margin: 0 0 20px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.wallet-adapter-modal-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
